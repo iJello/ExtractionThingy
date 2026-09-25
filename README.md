@@ -11,4 +11,5 @@ assisted in planning phase
 Completed part 1 and part 3 and part 4 of th proposal
 
 #Riley Martin
-
+assisted in planning phase
+Completed part 1
