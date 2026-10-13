@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private List<String> items = new List<String>();
+    public static Inventory instance;
+    public event Action change;
+    public List<Item> items = new List<Item>();
 
-    public void AddItem(String itemName)
+    public void Awake()
     {
-        items.Add(itemName);
+        instance = this;
+    }
+    public void AddItem(Item item)
+    {
+        items.Add(item);
+        change?.Invoke();
+        PickUpUI.instance.ShowPopup(item);
     }
 }
