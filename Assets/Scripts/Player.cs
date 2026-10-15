@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -8,8 +7,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float sprintSpeed = 2f;
 
     private InputSystem_Actions controls;
+    private InteractableItem currentItem;
+
     private Rigidbody rb;
     private bool isGrounded;
+
+    private Vector2 moveInput;
+    private float currentSpeed;
 
     private void Awake()
     {
@@ -22,33 +26,69 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        Vector2 input = controls.Player.Move.ReadValue<Vector2>();
+        moveInput = controls.Player.Move.ReadValue<Vector2>();
+
         float jump = controls.Player.Jump.ReadValue<float>();
         float sprint = controls.Player.Sprint.ReadValue<float>();
+        bool interactPressed = controls.Player.Interact.WasPressedThisFrame();
         
-        float currentSpeed = speed;
+        currentSpeed = speed;
         if (sprint > 0.5f)
         {
             currentSpeed = sprintSpeed;
         }
         
-        Vector3 move = new Vector3(input.x, 0f, input.y);
-        rb.linearVelocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
-
         if (jump > 0.5f && isGrounded)
         {
             float jumpVelocity = Mathf.Sqrt(2f * Physics.gravity.magnitude * jumpHeight);
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpVelocity, rb.linearVelocity.z);
         }
+        
+        if (interactPressed && currentItem != null)
+        {
+            currentItem.Interact();
+            currentItem = null;
+        }
     }
 
-    private void OnCollisionStay()
+    private void FixedUpdate()
     {
-        isGrounded = true;
+        Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
+        rb.linearVelocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
     }
 
-    private void OnCollisionExit()
+    private void OnTriggerEnter(Collider other)
     {
-        isGrounded = false;
+        if (other.TryGetComponent<InteractableItem>(out var item))
+        {
+            currentItem = item;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent<InteractableItem>(out var item))
+        {
+            if (currentItem == item)
+            {
+                currentItem = null;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 }
