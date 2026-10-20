@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Win
   - Lose
-  - Lost
   layers:
   - Default
   - TransparentFX

@@ -1,30 +1,31 @@
-using System;
 using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private GameObject textObject;
+    [SerializeField] private float displayTime = 3f;
+    [SerializeField] private bool destroyTrigger = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (!other.CompareTag("Player"))
         {
-            
+            return;
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Destroy(gameObject);
+        if (textObject != null)
+        {
+            textObject.SetActive(true);
+        }
+        
+        if (destroyTrigger)
+        {
+            Destroy(gameObject);
+        }
+        
+        if (textObject != null)
+        {
+            Destroy(textObject, displayTime);
+        }
     }
 }

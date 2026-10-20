@@ -12,18 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04bd057c-ebba-4658-8e03-b84807c8e88c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Fog.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Fog.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/GameObject Profile.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/GameObject Profile.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingSim.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingSim.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingSim/NavMesh-Storyteller-pathway.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingSim/NavMesh-Storyteller-pathway.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Fog.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Fog.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/FogShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/FogShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PanelTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PanelTrigger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
