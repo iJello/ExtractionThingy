@@ -53,8 +53,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
-        rb.linearVelocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
+        Vector3 forwardMovement = transform.forward * moveInput.y;
+        Vector3 rightMovement = transform.right * moveInput.x;
+        
+        Vector3 moveDirection = (forwardMovement + rightMovement) * currentSpeed;
+        
+        rb.linearVelocity = new Vector3(moveDirection.x, rb.linearVelocity.y, moveDirection.z);
     }
 
     private void OnTriggerEnter(Collider other)
