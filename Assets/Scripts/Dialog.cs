@@ -18,10 +18,7 @@ public class Dialog : MonoBehaviour
             textObject.SetActive(true);
         }
         
-        if (destroyTrigger)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(textObject, displayTime);
         
         if (textObject != null)
         {
