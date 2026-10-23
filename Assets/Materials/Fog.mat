@@ -38,7 +38,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FogDensity: 0.6
+    - _FogDensity: 0.96
     - _HeightBaseline: -2.27
     - _HeightFade: 2.65
     - _QueueControl: 0
