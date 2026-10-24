@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/WalkingSim/MainMenu.unity
+    guid: ddcfdc5634244a741a8f4be2c4153d47
   - enabled: 1
     path: Assets/Scenes/WalkingSim/WalkingSim.unity
     guid: b13b262c8e72c3c4999189e3af5f0e0a

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 public class FirstPersonCamera : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class FirstPersonCamera : MonoBehaviour
     float cameraVerticalRotation = 0f;
 
     bool lockedCursor = true;
-    
+
     void Start()
     {
         Cursor.visible = false;
@@ -17,15 +17,31 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Update()
     {
+        if (!lockedCursor) return;
+
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 
         float inputX = mouseDelta.x * mouseSensitivity;
         float inputY = mouseDelta.y * mouseSensitivity;
-        
+
         cameraVerticalRotation -= inputY;
         cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
         transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
 
         player.Rotate(Vector3.up * inputX);
+    }
+
+    public void UnlockCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        lockedCursor = false;
+    }
+
+    public void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        lockedCursor = true;
     }
 }
