@@ -37,7 +37,7 @@ public class BattleManager : MonoBehaviour
             currentAP = playerBaseAP + playerStoredAP;
             playerStoredAP = 0;
 
-            // Increase base AP for the next player turn.
+
             playerBaseAP = Mathf.Min(6, playerBaseAP + 1);
         }
         else
@@ -48,7 +48,6 @@ public class BattleManager : MonoBehaviour
             currentAP = opponentBaseAP + opponentStoredAP;
             opponentStoredAP = 0;
 
-            // Increase base AP for the next opponent turn.
             opponentBaseAP = Mathf.Min(6, opponentBaseAP + 1);
         }
 
@@ -56,7 +55,7 @@ public class BattleManager : MonoBehaviour
                   "'s turn. AP: " + currentAP);
     }
 
-    //  ATTACK
+    //  ATTACK stuff
     public void Attack(MovesBase move)
     {
         if (move == null || currentCreature == null ||

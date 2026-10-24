@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 195014164}
   - component: {fileID: 195014163}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,8 @@ Transform:
   m_LocalPosition: {x: 2.00243, y: 0, z: -0.02173996}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 847197156}
   m_Father: {fileID: 635024473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &195014163
@@ -547,9 +548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766f50a8d73a1014abc3a1faed201a1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
-  moveName: 
+  moveName: BasicAttack
   actionPointCost: 1
   damage: 10
+  typeColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &401972126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,7 @@ GameObject:
   - component: {fileID: 811399510}
   - component: {fileID: 811399509}
   - component: {fileID: 811399512}
+  - component: {fileID: 811399513}
   m_Layer: 0
   m_Name: AllyCreature
   m_TagString: Untagged
@@ -1023,12 +1026,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811399507}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.056, y: 0.583, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.83, z: 0}
+  m_LocalScale: {x: 0.5, y: 10, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1826113045}
+  m_Father: {fileID: 1077175467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &811399509
 SphereCollider:
@@ -1076,7 +1079,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: 24d003804884e794cb0dfe31f1e87c50, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1124,8 +1127,24 @@ MonoBehaviour:
   health: 0
   block: 0
   defensePoints: 0
+  shaderController: {fileID: 0}
   moves:
   - {fileID: 273819190}
+--- !u!114 &811399513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811399507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0af605aa4bcc24586fdb2ead3534f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureShaderController
+  targetRenderers: []
+  fadeInTime: 0.08
+  fadeOutTime: 0.35
 --- !u!1 &847197155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1158,7 @@ GameObject:
   - component: {fileID: 847197158}
   - component: {fileID: 847197157}
   - component: {fileID: 847197160}
+  - component: {fileID: 847197161}
   m_Layer: 0
   m_Name: EnemyCreature
   m_TagString: Untagged
@@ -1154,12 +1174,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847197155}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.29, y: 0.583, z: -4.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.83, z: 0}
+  m_LocalScale: {x: 0.5, y: 10, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1826113045}
+  m_Father: {fileID: 195014162}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &847197157
 SphereCollider:
@@ -1207,7 +1227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: 24d003804884e794cb0dfe31f1e87c50, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1255,8 +1275,24 @@ MonoBehaviour:
   health: 0
   block: 0
   defensePoints: 0
+  shaderController: {fileID: 0}
   moves:
   - {fileID: 273819190}
+--- !u!114 &847197161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847197155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0af605aa4bcc24586fdb2ead3534f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CreatureShaderController
+  targetRenderers: []
+  fadeInTime: 0.08
+  fadeOutTime: 0.35
 --- !u!1 &1077175466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1306,7 @@ GameObject:
   - component: {fileID: 1077175469}
   - component: {fileID: 1077175468}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Platform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1288,7 +1324,8 @@ Transform:
   m_LocalPosition: {x: -1.2175701, y: 0, z: -3.65174}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 811399508}
   m_Father: {fileID: 635024473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1077175468
@@ -2326,9 +2363,7 @@ Transform:
   m_LocalPosition: {x: -0.13243, y: 0, z: -9.18826}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 811399508}
-  - {fileID: 847197156}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905976828

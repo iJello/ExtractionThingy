@@ -7,27 +7,33 @@ public class Creature : MonoBehaviour
     public int maxHealth = 100;
     public int health;
     public int block;
-
-    // Damage reduction for the opponent's next attack.
-    [HideInInspector] public int defensePoints;
+    public int defensePoints;
+    
+    //Shader stuff
+    public CreatureShaderController shaderController;
 
     public List<MovesBase> moves = new List<MovesBase>();
 
     private void Awake()
     {
         health = maxHealth;
+        if (shaderController == null)
+        {
+            shaderController = GetComponent<CreatureShaderController>();
+        }
+    
     }
 
     public void TakeDamage(int dmg)
     {
-        // Apply defense: 1 point = 10% damage reduction.
+  
         float reduction = Mathf.Clamp(defensePoints * 0.10f, 0f, 1f);
         int reducedDamage = Mathf.CeilToInt(dmg * (1f - reduction));
 
-        // Defense applies to the next attack only.
+   
         defensePoints = 0;
 
-        // Block absorbs damage first.
+ 
         int absorbed = Mathf.Min(block, reducedDamage);
         block -= absorbed;
         reducedDamage -= absorbed;
