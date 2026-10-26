@@ -10,14 +10,7 @@
     <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04bd057c-ebba-4658-8e03-b84807c8e88c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Island.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Island.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ForestLayout.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/ForestLayout.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ForestLayout.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/ForestLayout.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ComputerGraphics/Forest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ComputerGraphics/Forest.unity" afterDir="false" />
-    </list>
+    <list default="true" id="04bd057c-ebba-4658-8e03-b84807c8e88c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +28,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Portal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Environment/NewUnlitUniversalRenderPipelineShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Environment/Sand.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/Environment/Water.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4,
