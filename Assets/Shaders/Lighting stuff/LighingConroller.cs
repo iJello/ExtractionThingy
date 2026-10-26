@@ -1,14 +1,15 @@
 
 using UnityEngine;
 
-public class LightingConroller : MonoBehaviour
+public class LighingConroller : MonoBehaviour
 {
-    [Header("Objects using the Illumination Shader")]
+
     public Renderer[] targetObjects;
 
     private const string Ambient = "AmbientEnabled";
     private const string Diffuse = "DiffuseEnabled";
     private const string Specular = "SpecularEnabled";
+    private const string Wrap = "WrapEnabled";
 
     private MaterialPropertyBlock propertyBlock;
 
