@@ -172,6 +172,51 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light1"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f66a783-6153-436b-81ad-fcda3a5aa65e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light2"",
+                    ""type"": ""Button"",
+                    ""id"": ""eca3a078-e8f5-4751-92d5-e860ffa536ee"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light3"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e68ac36-ca19-4f2d-b2a8-060a4f617755"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light4"",
+                    ""type"": ""Button"",
+                    ""id"": ""31584868-598b-48e9-8757-05efcb006cf1"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Light5"",
+                    ""type"": ""Button"",
+                    ""id"": ""989fef24-2a9e-4edc-83cd-2a6f70f57189"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -568,6 +613,72 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a23da38-5fea-4a54-98f8-981a1aa68e11"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b27d5aba-f45a-46c0-809a-b3961414056d"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49addb4a-c450-4e2e-bd19-9cc670e12a83"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b8f3000-4f12-4a76-a811-02db093ea6b3"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55e06b85-bf11-4fc0-8a56-f12fafdf65c1"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d78cc6b7-835e-4ac6-a19e-d1f8c75e5643"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Light5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1164,6 +1275,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Light1 = m_Player.FindAction("Light1", throwIfNotFound: true);
+        m_Player_Light2 = m_Player.FindAction("Light2", throwIfNotFound: true);
+        m_Player_Light3 = m_Player.FindAction("Light3", throwIfNotFound: true);
+        m_Player_Light4 = m_Player.FindAction("Light4", throwIfNotFound: true);
+        m_Player_Light5 = m_Player.FindAction("Light5", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1266,6 +1382,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Previous;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Light1;
+    private readonly InputAction m_Player_Light2;
+    private readonly InputAction m_Player_Light3;
+    private readonly InputAction m_Player_Light4;
+    private readonly InputAction m_Player_Light5;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1313,6 +1434,26 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Light1".
+        /// </summary>
+        public InputAction @Light1 => m_Wrapper.m_Player_Light1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Light2".
+        /// </summary>
+        public InputAction @Light2 => m_Wrapper.m_Player_Light2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Light3".
+        /// </summary>
+        public InputAction @Light3 => m_Wrapper.m_Player_Light3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Light4".
+        /// </summary>
+        public InputAction @Light4 => m_Wrapper.m_Player_Light4;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Light5".
+        /// </summary>
+        public InputAction @Light5 => m_Wrapper.m_Player_Light5;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1366,6 +1507,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @Light1.started += instance.OnLight1;
+            @Light1.performed += instance.OnLight1;
+            @Light1.canceled += instance.OnLight1;
+            @Light2.started += instance.OnLight2;
+            @Light2.performed += instance.OnLight2;
+            @Light2.canceled += instance.OnLight2;
+            @Light3.started += instance.OnLight3;
+            @Light3.performed += instance.OnLight3;
+            @Light3.canceled += instance.OnLight3;
+            @Light4.started += instance.OnLight4;
+            @Light4.performed += instance.OnLight4;
+            @Light4.canceled += instance.OnLight4;
+            @Light5.started += instance.OnLight5;
+            @Light5.performed += instance.OnLight5;
+            @Light5.canceled += instance.OnLight5;
         }
 
         /// <summary>
@@ -1404,6 +1560,21 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @Light1.started -= instance.OnLight1;
+            @Light1.performed -= instance.OnLight1;
+            @Light1.canceled -= instance.OnLight1;
+            @Light2.started -= instance.OnLight2;
+            @Light2.performed -= instance.OnLight2;
+            @Light2.canceled -= instance.OnLight2;
+            @Light3.started -= instance.OnLight3;
+            @Light3.performed -= instance.OnLight3;
+            @Light3.canceled -= instance.OnLight3;
+            @Light4.started -= instance.OnLight4;
+            @Light4.performed -= instance.OnLight4;
+            @Light4.canceled -= instance.OnLight4;
+            @Light5.started -= instance.OnLight5;
+            @Light5.performed -= instance.OnLight5;
+            @Light5.canceled -= instance.OnLight5;
         }
 
         /// <summary>
@@ -1767,6 +1938,41 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Light1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLight1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Light2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLight2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Light3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLight3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Light4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLight4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Light5" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLight5(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

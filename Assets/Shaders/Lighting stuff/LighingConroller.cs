@@ -1,46 +1,72 @@
-
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LighingConroller : MonoBehaviour
 {
-
     public Renderer[] targetObjects;
 
-    private const string Ambient = "AmbientEnabled";
-    private const string Diffuse = "DiffuseEnabled";
-    private const string Specular = "SpecularEnabled";
-    private const string Wrap = "WrapEnabled";
+    public InputActionReference light1;
+    public InputActionReference light2;
+    public InputActionReference light3;
+    public InputActionReference light4;
+    public InputActionReference light5;
+
+    private const string Ambient = "_AmbientEnabled";
+    private const string Diffuse = "_DiffuseEnabled";
+    private const string Specular = "_SpecularEnabled";
+    private const string Wrap = "_WrapEnabled";
 
     private MaterialPropertyBlock propertyBlock;
 
     void Awake()
     {
         propertyBlock = new MaterialPropertyBlock();
+
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("LightAffected");
+        targetObjects = new Renderer[objects.Length];
+
+        for (int i = 0; i < objects.Length; i++)
+        {
+            targetObjects[i] = objects[i].GetComponent<Renderer>();
+        }
+
         SetLightingMode(1);
+    }
+
+    void OnEnable()
+    {
+        light1.action.Enable();
+        light2.action.Enable();
+        light3.action.Enable();
+        light4.action.Enable();
+        light5.action.Enable();
+    }
+
+    void OnDisable()
+    {
+        light1.action.Disable();
+        light2.action.Disable();
+        light3.action.Disable();
+        light4.action.Disable();
+        light5.action.Disable();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (light1.action.WasPressedThisFrame())
             SetLightingMode(1);
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (light2.action.WasPressedThisFrame())
             SetLightingMode(2);
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (light3.action.WasPressedThisFrame())
             SetLightingMode(3);
 
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+        if (light4.action.WasPressedThisFrame())
             SetLightingMode(4);
 
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (light5.action.WasPressedThisFrame())
             SetLightingMode(5);
-
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-            SetLightingMode(6);
-
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-            SetLightingMode(7);
     }
 
     void SetLightingMode(int mode)
@@ -48,13 +74,14 @@ public class LighingConroller : MonoBehaviour
         float ambient = 0f;
         float diffuse = 0f;
         float specular = 0f;
+        float wrap = 0f;
 
         switch (mode)
         {
-            case 1: //Nothing
+            case 1: // Nothing
                 break;
 
-            case 2: //Ambient
+            case 2: // Ambient
                 ambient = 1f;
                 break;
 
@@ -67,8 +94,13 @@ public class LighingConroller : MonoBehaviour
                 specular = 1f;
                 break;
 
+            case 5: // Ambient + Specular + Wrap
+                ambient = 1f;
+                specular = 1f;
+                wrap = 1f;
+                break;
         }
-
+        
         foreach (Renderer target in targetObjects)
         {
             if (target == null)
@@ -79,10 +111,11 @@ public class LighingConroller : MonoBehaviour
             propertyBlock.SetFloat(Ambient, ambient);
             propertyBlock.SetFloat(Diffuse, diffuse);
             propertyBlock.SetFloat(Specular, specular);
+            propertyBlock.SetFloat(Wrap, wrap);
 
             target.SetPropertyBlock(propertyBlock);
         }
 
-        Debug.Log("Lighting mode: " + mode);
+        
     }
 }
