@@ -4,7 +4,8 @@ Shader "Custom/Water"
     {
         _myDiffuse ("Diffuse Texture", 2D) = "white" {}
         _myBump ("Bump Texture", 2D) = "bump" {}
-        _mySlider ("Bump Amount", Range(0,2)) = 0.5 
+        _mySlider ("Bump Amount", Range(0,2)) = 0.5
+        _speed ("Scroll Speed", Float) = 0.1
     }
 
     SubShader
@@ -45,6 +46,7 @@ Shader "Custom/Water"
             CBUFFER_START(UnityPerMaterial)
                 float _mySlider;
                 float4 _myBump_ST;
+                float _speed;
             CBUFFER_END
 
             Varyings vert(Attributes IN)
@@ -67,7 +69,8 @@ Shader "Custom/Water"
             half4 frag(Varyings IN) : SV_Target
             {
                 half4 albedo = SAMPLE_TEXTURE2D(_myDiffuse, sampler_myDiffuse, IN.uv);
-                half3 normalTS = UnpackNormal(SAMPLE_TEXTURE2D(_myBump, sampler_myBump, IN.uv));
+                float2 scrolledUV = IN.uv + _Time.y * _speed;
+                half3 normalTS = UnpackNormal(SAMPLE_TEXTURE2D(_myBump, sampler_myBump, scrolledUV));
 
                 normalTS.xy *= _mySlider;
                 
