@@ -156,6 +156,14 @@ public class BattleManager : MonoBehaviour
         if (!player.IsAlive() || !opponent.IsAlive())
         {
             Debug.Log("Battle is over!");
+            if (!player.IsAlive())
+            {
+                GameManager.instance.Lose();
+            }
+            else if (!opponent.IsAlive())
+            {
+                GameManager.instance.Win();
+            }
             return;
         }
 
