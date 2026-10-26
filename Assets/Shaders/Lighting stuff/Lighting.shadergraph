@@ -206,6 +206,9 @@
         },
         {
             "m_Id": "e0f61f94608f411fab8857a4576f3bc2"
+        },
+        {
+            "m_Id": "bf5de6922306411aa44e48892cd64776"
         }
     ],
     "m_Edges": [
@@ -3860,8 +3863,8 @@
     "m_Theme": 0,
     "m_Position": {
         "serializedVersion": "2",
-        "x": -2159.199951171875,
-        "y": 1144.800048828125,
+        "x": -2179.199951171875,
+        "y": 1217.60009765625,
         "width": 202.39990234375,
         "height": 100.0
     },
@@ -4910,6 +4913,26 @@
     "m_DefaultValue": 0.0,
     "m_Labels": [],
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": "bf5de6922306411aa44e48892cd64776",
+    "m_Title": "Base",
+    "m_Content": "Write something here",
+    "m_TextSize": 0,
+    "m_Theme": 0,
+    "m_Position": {
+        "serializedVersion": "2",
+        "x": -2164.0,
+        "y": -105.60000610351563,
+        "width": 558.4000244140625,
+        "height": 100.0
+    },
+    "m_Group": {
+        "m_Id": ""
+    }
 }
 
 {
