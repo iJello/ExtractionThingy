@@ -44,6 +44,6 @@ Simple bump shader used in class with a scroll speed to be able to make it flowi
 <img width="134" height="51" alt="image" src="https://github.com/user-attachments/assets/b04d2924-8fc7-4d69-9c2c-32575a4885fa" />  
 Simple bump shader used in class with tiling that actually was able to be affected so the sand looked better. Texture found online  
 
-##Reflection
+## Reflection
 	Throughout the development of Hunting Grounds, we had no real set roles. This was both a blessing and a curse, where whenever one person would start working on something, they would have to notify the other person, so as to not step on each other's toes. This allowed us to get an understanding on how each part of the project worked. One of the most difficult parts of development was time management. Over the past few months, a lot of our time was spent on other projects, and assignments, leaving little time each week for Hunting Grounds. When attempting to create the bump shader in the shader graph it didn't work properly and we were unhappy with the outcome. We switched over to using shaderlab. One of the issues was trying to figure out color grading, since color grading was such a new topic, and it was just skimmed over in class, we struggled to obtain a deeper understanding of it. It took us a while but eventually we figured it out. Since our proposal was just a framework, we didn’t need to cut out any particular part of the proposal. Overall, this part of the development process has helped us figure out the scope of the final project for this assignment.
 
