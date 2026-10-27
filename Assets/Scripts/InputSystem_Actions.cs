@@ -217,6 +217,42 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Colorgrade0"",
+                    ""type"": ""Button"",
+                    ""id"": ""34e2e44c-eec7-4843-8671-f4a372bac10c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Colorgrade1"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8e2b852-7496-451c-864e-9ed4da9eb55e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Colorgrade2"",
+                    ""type"": ""Button"",
+                    ""id"": ""d579fbbc-8fe9-43a3-b478-4411c33bcc90"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Colorgrad3"",
+                    ""type"": ""Button"",
+                    ""id"": ""33ca9647-4169-4b0f-8541-327251e291d6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -679,6 +715,50 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Light5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74b99170-bafe-4f3e-8ef5-05aaa26bde90"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Colorgrade1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e2eb5a8-0363-4e3d-b6ae-5c2c6193a7f9"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Colorgrade2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02bb9c5d-c2cf-419a-8154-78bbde6c2a7b"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Colorgrad3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ff8fdf4-155a-46b1-8421-b11305b60b64"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Colorgrade0"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1280,6 +1360,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Light3 = m_Player.FindAction("Light3", throwIfNotFound: true);
         m_Player_Light4 = m_Player.FindAction("Light4", throwIfNotFound: true);
         m_Player_Light5 = m_Player.FindAction("Light5", throwIfNotFound: true);
+        m_Player_Colorgrade0 = m_Player.FindAction("Colorgrade0", throwIfNotFound: true);
+        m_Player_Colorgrade1 = m_Player.FindAction("Colorgrade1", throwIfNotFound: true);
+        m_Player_Colorgrade2 = m_Player.FindAction("Colorgrade2", throwIfNotFound: true);
+        m_Player_Colorgrad3 = m_Player.FindAction("Colorgrad3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1387,6 +1471,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Light3;
     private readonly InputAction m_Player_Light4;
     private readonly InputAction m_Player_Light5;
+    private readonly InputAction m_Player_Colorgrade0;
+    private readonly InputAction m_Player_Colorgrade1;
+    private readonly InputAction m_Player_Colorgrade2;
+    private readonly InputAction m_Player_Colorgrad3;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1455,6 +1543,22 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Light5 => m_Wrapper.m_Player_Light5;
         /// <summary>
+        /// Provides access to the underlying input action "Player/Colorgrade0".
+        /// </summary>
+        public InputAction @Colorgrade0 => m_Wrapper.m_Player_Colorgrade0;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Colorgrade1".
+        /// </summary>
+        public InputAction @Colorgrade1 => m_Wrapper.m_Player_Colorgrade1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Colorgrade2".
+        /// </summary>
+        public InputAction @Colorgrade2 => m_Wrapper.m_Player_Colorgrade2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Colorgrad3".
+        /// </summary>
+        public InputAction @Colorgrad3 => m_Wrapper.m_Player_Colorgrad3;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1522,6 +1626,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Light5.started += instance.OnLight5;
             @Light5.performed += instance.OnLight5;
             @Light5.canceled += instance.OnLight5;
+            @Colorgrade0.started += instance.OnColorgrade0;
+            @Colorgrade0.performed += instance.OnColorgrade0;
+            @Colorgrade0.canceled += instance.OnColorgrade0;
+            @Colorgrade1.started += instance.OnColorgrade1;
+            @Colorgrade1.performed += instance.OnColorgrade1;
+            @Colorgrade1.canceled += instance.OnColorgrade1;
+            @Colorgrade2.started += instance.OnColorgrade2;
+            @Colorgrade2.performed += instance.OnColorgrade2;
+            @Colorgrade2.canceled += instance.OnColorgrade2;
+            @Colorgrad3.started += instance.OnColorgrad3;
+            @Colorgrad3.performed += instance.OnColorgrad3;
+            @Colorgrad3.canceled += instance.OnColorgrad3;
         }
 
         /// <summary>
@@ -1575,6 +1691,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Light5.started -= instance.OnLight5;
             @Light5.performed -= instance.OnLight5;
             @Light5.canceled -= instance.OnLight5;
+            @Colorgrade0.started -= instance.OnColorgrade0;
+            @Colorgrade0.performed -= instance.OnColorgrade0;
+            @Colorgrade0.canceled -= instance.OnColorgrade0;
+            @Colorgrade1.started -= instance.OnColorgrade1;
+            @Colorgrade1.performed -= instance.OnColorgrade1;
+            @Colorgrade1.canceled -= instance.OnColorgrade1;
+            @Colorgrade2.started -= instance.OnColorgrade2;
+            @Colorgrade2.performed -= instance.OnColorgrade2;
+            @Colorgrade2.canceled -= instance.OnColorgrade2;
+            @Colorgrad3.started -= instance.OnColorgrad3;
+            @Colorgrad3.performed -= instance.OnColorgrad3;
+            @Colorgrad3.canceled -= instance.OnColorgrad3;
         }
 
         /// <summary>
@@ -1973,6 +2101,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLight5(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Colorgrade0" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnColorgrade0(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Colorgrade1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnColorgrade1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Colorgrade2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnColorgrade2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Colorgrad3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnColorgrad3(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

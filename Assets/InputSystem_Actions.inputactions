@@ -131,6 +131,42 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Colorgrade0",
+                    "type": "Button",
+                    "id": "34e2e44c-eec7-4843-8671-f4a372bac10c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Colorgrade1",
+                    "type": "Button",
+                    "id": "d8e2b852-7496-451c-864e-9ed4da9eb55e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Colorgrade2",
+                    "type": "Button",
+                    "id": "d579fbbc-8fe9-43a3-b478-4411c33bcc90",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Colorgrad3",
+                    "type": "Button",
+                    "id": "33ca9647-4169-4b0f-8541-327251e291d6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -593,6 +629,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Light5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "74b99170-bafe-4f3e-8ef5-05aaa26bde90",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colorgrade1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e2eb5a8-0363-4e3d-b6ae-5c2c6193a7f9",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colorgrade2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02bb9c5d-c2cf-419a-8154-78bbde6c2a7b",
+                    "path": "<Keyboard>/9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colorgrad3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ff8fdf4-155a-46b1-8421-b11305b60b64",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Colorgrade0",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
