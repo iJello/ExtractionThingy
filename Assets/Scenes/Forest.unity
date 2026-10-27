@@ -593,15 +593,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e92e312c1405db44fb1e7a1e29c2eab0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e92e312c1405db44fb1e7a1e29c2eab0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e92e312c1405db44fb1e7a1e29c2eab0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e92e312c1405db44fb1e7a1e29c2eab0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3401,7 +3401,7 @@ MonoBehaviour:
   luts:
   - {fileID: 2800000, guid: d0e0621ce48386a4385c916638e99afe, type: 3}
   - {fileID: 2800000, guid: 4d0473420c18d6f46a1b7a2f826e12b0, type: 3}
-  - {fileID: 2800000, guid: 2607cec893741b94d9e3aa22e781f2f7, type: 3}
+  - {fileID: 2800000, guid: 85fcf8e744a5ca04db909ee46cc86d5e, type: 3}
   lut0: {fileID: -5683221636721356034, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lut1: {fileID: 4446127943266245642, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lut2: {fileID: -6448343169104653242, guid: 052faaac586de48259a63d0c4782560b, type: 3}
