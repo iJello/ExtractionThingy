@@ -12,7 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="04bd057c-ebba-4658-8e03-b84807c8e88c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Environment/Water.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Environment/Water.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Sand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Sand.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Trees.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Trees.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Trees.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Trees.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ColorGrading/ColorGrading.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ColorGrading/ColorGrading.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +59,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Water",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

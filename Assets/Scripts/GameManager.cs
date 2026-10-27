@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         ShowEndPanel("You Lost!");
     }
 
-    private void ShowEndPanel(string message)
+    private void ShowEndPanel(string text)
     {
         if (gameEnded)
         {
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         if (resultText != null)
         {
-            resultText.text = message;
+            resultText.text = text;
         }
 
         if (endGamePanel != null)
