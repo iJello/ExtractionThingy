@@ -33,3 +33,11 @@ Simple Fresnel shader that outputs to emission so that there is a variable, when
 **Portal Shader**
 <img width="905" height="465" alt="image" src="https://github.com/user-attachments/assets/6b888df4-db08-463e-b42e-5102c6b2408c" />
 Shader that gets the UV and uses the twirl function in shader graph to create a twisting motion for a portal also changed it so that the portal is slightly transparent.
+**Water shader**
+<img width="324" height="174" alt="image" src="https://github.com/user-attachments/assets/d52bc1ba-c3bc-4eed-9f13-eef80d5f03d5" />
+Simple bump shader used in class with a scroll speed to be able to make it flowing. Texture found online
+**Sand shader**
+<img width="134" height="51" alt="image" src="https://github.com/user-attachments/assets/b04d2924-8fc7-4d69-9c2c-32575a4885fa" />
+Simple bump shader used in class with tiling that actually was able to be affected so the sand looked better. Texture found online
+
+
