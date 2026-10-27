@@ -18,11 +18,11 @@ Used the shader graph shown in the lecture slides as it wasn't covered in class,
 Created a script to swap between each look up table in order to change the look of the game
 
 **Cool LUT**
-<img width="256" height="16" alt="CoolLUT" src="https://github.com/user-attachments/assets/cc0b595b-4898-42c2-8196-edc52840f626" />
+<img width="256" height="16" alt="CoolLUT" src="https://github.com/user-attachments/assets/cc0b595b-4898-42c2-8196-edc52840f626" />  
 **Warm LUT**
-<img width="256" height="16" alt="WarmLUT" src="https://github.com/user-attachments/assets/709fc71d-6362-43e6-b286-650571a4c6aa" />
+<img width="256" height="16" alt="WarmLUT" src="https://github.com/user-attachments/assets/709fc71d-6362-43e6-b286-650571a4c6aa" />  
 **Custom LUT**
-<img width="256" height="16" alt="CustomLUT" src="https://github.com/user-attachments/assets/df014c90-1a52-4110-b21d-eaa99823f0ec" />
+<img width="256" height="16" alt="CustomLUT" src="https://github.com/user-attachments/assets/df014c90-1a52-4110-b21d-eaa99823f0ec" />  
 
 Used the default LUT table given in class to then put in photo shop and create a filter layer to mess with. After messing with and getting how we wanted it to look just exported it as png to implement into unity
 
