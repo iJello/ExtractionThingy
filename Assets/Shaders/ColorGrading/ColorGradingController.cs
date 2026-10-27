@@ -10,36 +10,47 @@ public class ColorGradingController : MonoBehaviour
     public InputActionReference lut1;
     public InputActionReference lut2;
     public InputActionReference lut3;
-    private bool contributionEnabled = false;
+
+    private bool LUTToggle = false;
+    public float ContributionDefault = 0.2f    ;
+
     private void OnEnable()
     {
-        lut0.action.Enable();
-        lut1.action.Enable();
-        lut2.action.Enable();
-        lut3.action.Enable();
-
         lut0.action.performed += OnLUT0;
         lut1.action.performed += OnLUT1;
         lut2.action.performed += OnLUT2;
         lut3.action.performed += OnLUT3;
+
+        lut0.action.Enable();
+        lut1.action.Enable();
+        lut2.action.Enable();
+        lut3.action.Enable();
     }
 
     private void OnDisable()
     {
+        lut0.action.performed -= OnLUT0;
         lut1.action.performed -= OnLUT1;
         lut2.action.performed -= OnLUT2;
         lut3.action.performed -= OnLUT3;
 
+        lut0.action.Disable();
         lut1.action.Disable();
         lut2.action.Disable();
         lut3.action.Disable();
     }
+
     private void OnLUT0(InputAction.CallbackContext context)
     {
+        LUTToggle = !LUTToggle;
 
-        contributionEnabled = !contributionEnabled;
-        gradingMaterial.SetFloat("_Contribution", contributionEnabled ? 1f : 0f);
+        if (gradingMaterial != null)
+            gradingMaterial.SetFloat(
+                "_Contribution",
+                LUTToggle ? ContributionDefault : 0f
+            );
     }
+
     private void OnLUT1(InputAction.CallbackContext context)
     {
         SetLUT(0);
@@ -48,22 +59,29 @@ public class ColorGradingController : MonoBehaviour
     private void OnLUT2(InputAction.CallbackContext context)
     {
         SetLUT(1);
-        Debug.Log("Cool");
     }
 
     private void OnLUT3(InputAction.CallbackContext context)
     {
         SetLUT(2);
-        Debug.Log("Warm");
     }
 
     public void SetLUT(int index)
     {
-        if (gradingMaterial == null || luts == null ||
-            index < 0 || index >= luts.Length ||
-            luts[index] == null)
+        if (gradingMaterial == null)
+        {
+            Debug.LogError("Grading Material is not assigned!");
             return;
+        }
+
+        if (luts == null || index < 0 || index >= luts.Length || luts[index] == null)
+        {
+            Debug.LogError("LUT is missing or index is invalid: " + index);
+            return;
+        }
 
         gradingMaterial.SetTexture("_LUT", luts[index]);
+
+        Debug.Log("Switched to LUT: " + luts[index].name);
     }
 }
