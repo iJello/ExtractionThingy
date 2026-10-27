@@ -7,7 +7,7 @@ public class Portal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameManager.instance.GoToMainBase();
+            GameManager.instance.Win();
         }
     }
 }
