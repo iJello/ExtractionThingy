@@ -2140,9 +2140,21 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 588cc9f79224ed3488de6f1a728d926a, type: 2}
+    - target: {fileID: -5568371526223589888, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
       propertyPath: m_Name
       value: LowPolyTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291190919447392298, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3406,7 +3418,7 @@ MonoBehaviour:
   lut1: {fileID: 4446127943266245642, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lut2: {fileID: -6448343169104653242, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   lut3: {fileID: -2745045449652128468, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  ContributionDefault: 0.2
+  ContributionDefault: 0.1
 --- !u!4 &925375089
 Transform:
   m_ObjectHideFlags: 0
@@ -5822,9 +5834,21 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 588cc9f79224ed3488de6f1a728d926a, type: 2}
+    - target: {fileID: -5568371526223589888, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
       propertyPath: m_Name
       value: LowPolyTree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291190919447392298, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6461,9 +6485,21 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 588cc9f79224ed3488de6f1a728d926a, type: 2}
+    - target: {fileID: -5568371526223589888, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
       propertyPath: m_Name
       value: LowPolyTree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291190919447392298, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      propertyPath: m_TagString
+      value: LightAffected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

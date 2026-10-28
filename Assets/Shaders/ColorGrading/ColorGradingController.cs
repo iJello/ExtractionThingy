@@ -11,8 +11,8 @@ public class ColorGradingController : MonoBehaviour
     public InputActionReference lut2;
     public InputActionReference lut3;
 
-    private bool LUTToggle = false;
-    public float ContributionDefault = 0.2f    ;
+    private bool LUTToggle = true;
+    public float ContributionDefault = 0.05f    ;
 
     private void OnEnable()
     {
@@ -53,16 +53,28 @@ public class ColorGradingController : MonoBehaviour
 
     private void OnLUT1(InputAction.CallbackContext context)
     {
+        if (gradingMaterial != null)
+        {
+            gradingMaterial.SetFloat("_Contribution", ContributionDefault);
+        }
         SetLUT(0);
     }
 
     private void OnLUT2(InputAction.CallbackContext context)
     {
+        if (gradingMaterial != null)
+        {
+            gradingMaterial.SetFloat("_Contribution", ContributionDefault);
+        }
         SetLUT(1);
     }
 
     private void OnLUT3(InputAction.CallbackContext context)
     {
+        if (gradingMaterial != null)
+        {
+            gradingMaterial.SetFloat("_Contribution", 0.9f);
+        }
         SetLUT(2);
     }
 
