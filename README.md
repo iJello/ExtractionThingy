@@ -52,3 +52,6 @@ When attempting to create the bump shader in the shader graph it didn't work pro
 trying to figure out color grading, since color grading was such a new topic, and it was just skimmed over in class, we struggled to obtain a deeper understanding of it. It took us a while 
 but eventually we figured it out. Since our proposal was just a framework, we didn’t need to cut out any particular part of the proposal. Overall, this part of the development process has helped 
 us figure out the scope of the final project for this assignment.
+
+## Unlisted video
+https://youtu.be/kNI-LwwLT5k 
