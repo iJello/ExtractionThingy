@@ -37,12 +37,12 @@ Shader that gets the UV and uses the twirl function in shader graph to create a 
 **Water shader**  
 
 <img width="324" height="174" alt="image" src="https://github.com/user-attachments/assets/d52bc1ba-c3bc-4eed-9f13-eef80d5f03d5" />  
-Simple bump shader used in class with a scroll speed to be able to make it flowing. Texture found online  
+Simple bump shader used in class with a scroll speed to be able to make it flowing. Texture found online - https://3dtextures.me/2018/11/29/water-002/
 
 **Sand shader**
 
 <img width="134" height="51" alt="image" src="https://github.com/user-attachments/assets/b04d2924-8fc7-4d69-9c2c-32575a4885fa" />  
-Simple bump shader used in class with tiling that actually was able to be affected so the sand looked better. Texture found online  
+Simple bump shader used in class with tiling that actually was able to be affected so the sand looked better. Texture found online - https://3dtextures.me/2018/11/29/water-002/
 
 ## Reflection
 Throughout the development of Hunting Grounds, we had no real set roles. This was both a blessing and a curse, where whenever one person would start working on something 
