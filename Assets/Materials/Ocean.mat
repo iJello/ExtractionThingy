@@ -136,7 +136,7 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _mySlider: 1
-    - _speed: 0.1
+    - _speed: 0.01
     m_Colors:
     - _BaseColor: {r: 0.074660614, g: 0.7749414, b: 0.9496855, a: 1}
     - _Color: {r: 0.07466058, g: 0.7749414, b: 0.9496855, a: 1}
