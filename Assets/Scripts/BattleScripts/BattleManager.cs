@@ -1,5 +1,7 @@
 
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class BattleManager : MonoBehaviour
 {
@@ -19,12 +21,18 @@ public class BattleManager : MonoBehaviour
 
     private bool playerTurn = true;
 
+    //UI stuff
+    public Slider playerHealthBar;
+    public Slider enemyHealthBar;
+    public TMP_Text apTurnText;
+
     private void Start()
     {
         currentCreature = player;
         targetCreature = opponent;
 
         StartTurn();
+        HandleUI();
     }
 
     public void StartTurn()
@@ -58,6 +66,7 @@ public class BattleManager : MonoBehaviour
     //  ATTACK stuff
     public void Attack(MovesBase move)
     {
+        
         if (move == null || currentCreature == null ||
             targetCreature == null)
             return;
@@ -79,6 +88,8 @@ public class BattleManager : MonoBehaviour
         move.Action(currentCreature, targetCreature);
 
         Debug.Log("Remaining AP: " + currentAP);
+        HandleUI();
+        CheckDead();
     }
 
     //  DEFEND
@@ -93,30 +104,7 @@ public class BattleManager : MonoBehaviour
         Debug.Log(currentCreature.name +
                   " invested " + points +
                   " AP into defense.");
-    }
-
-    //STORE
-    public void Store()
-    {
-        int storedAP = playerTurn ? playerStoredAP : opponentStoredAP;
-
-        // Calculate how many points can still be stored.
-        int pointsToStore = Mathf.Min(currentAP, 12 - storedAP);
-
-        if (pointsToStore <= 0)
-        {
-            Debug.Log("Stored AP is already at its maximum.");
-            return;
-        }
-
-        currentAP -= pointsToStore;
-
-        if (playerTurn)
-            playerStoredAP += pointsToStore;
-        else
-            opponentStoredAP += pointsToStore;
-
-        Debug.Log("Stored " + pointsToStore + " AP.");
+        HandleUI();
     }
     // HEAL
     public void Heal(int points)
@@ -135,6 +123,7 @@ public class BattleManager : MonoBehaviour
 
         Debug.Log(currentCreature.name +
                   " healed for " + healAmount + " HP.");
+        HandleUI();
     }
 
     private bool CanSpend(int points)
@@ -153,9 +142,57 @@ public class BattleManager : MonoBehaviour
         if (player == null || opponent == null)
             return;
 
+        
+
+        //Store
+        if (playerTurn)
+        {
+            int pointsToStore = Mathf.Min(currentAP, 12 - playerStoredAP);
+            playerStoredAP += pointsToStore;
+        }
+        else
+        {
+            int pointsToStore = Mathf.Min(currentAP, 12 - opponentStoredAP);
+            opponentStoredAP += pointsToStore;
+        }
+
+        Debug.Log(currentCreature.name +
+                  " stored remaining AP. Player stored: " +
+                  playerStoredAP + ", Opponent stored: " +
+                  opponentStoredAP);
+
+        // Switch turns
+        playerTurn = !playerTurn;
+
+        Debug.Log("TurnSwitch");
+
+        StartTurn();
+        HandleUI();
+    }
+    public void HandleUI()
+    {
+        if (player != null && playerHealthBar != null)
+        {
+            playerHealthBar.maxValue = player.maxHealth;
+            playerHealthBar.value = player.health;
+        }
+
+        if (opponent != null && enemyHealthBar != null)
+        {
+            enemyHealthBar.maxValue = opponent.maxHealth;
+            enemyHealthBar.value = opponent.health;
+        }
+        if (apTurnText != null)
+        {
+            apTurnText.text = currentAP.ToString() + " AP";
+        }
+    }
+    public void CheckDead()
+    {
         if (!player.IsAlive() || !opponent.IsAlive())
         {
             Debug.Log("Battle is over!");
+
             if (!player.IsAlive())
             {
                 GameManager.instance.Lose();
@@ -164,11 +201,8 @@ public class BattleManager : MonoBehaviour
             {
                 GameManager.instance.Win();
             }
+
             return;
         }
-
-        playerTurn = !playerTurn;
-        Debug.Log("TurnSwitch");
-        StartTurn();
     }
 }
