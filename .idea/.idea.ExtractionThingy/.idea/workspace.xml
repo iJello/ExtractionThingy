@@ -12,12 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="04bd057c-ebba-4658-8e03-b84807c8e88c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ExtractionThingy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lighting.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lighting.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ocean.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ocean.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Sand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Sand.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Forest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ColorGrading/ColorGradingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ColorGrading/ColorGradingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Lighting stuff/Lighting.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Lighting stuff/Lighting.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CGBuild.zip" beforeDir="false" afterPath="$PROJECT_DIR$/CGBuild.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
