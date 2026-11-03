@@ -42,7 +42,9 @@ public class CreatureMovement : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Debug.Log("Test");
             SceneManager.LoadScene("BattleScene");
         }
     }
+    
 }
