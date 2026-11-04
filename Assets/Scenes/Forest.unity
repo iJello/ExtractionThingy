@@ -2254,6 +2254,7 @@ MonoBehaviour:
   movePoint1: {fileID: 1653488557}
   movePoint2: {fileID: 498991477}
   speed: 2
+  range: 10
 --- !u!1001 &667988230
 PrefabInstance:
   m_ObjectHideFlags: 0

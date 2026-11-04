@@ -6,9 +6,12 @@ public class CreatureMovement : MonoBehaviour
     [SerializeField] private Transform movePoint1;
     [SerializeField] private Transform movePoint2;
     [SerializeField] private float speed = 2f;
-
+    [SerializeField] private float range = 10f;
+    
     private Vector3 target;
     private bool headingToPoint2 = true;
+    private bool inRange;
+    private bool isChasing = false;
 
     void Start()
     {
