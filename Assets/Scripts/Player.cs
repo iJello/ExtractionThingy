@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private bool isGrounded;
 
     private Vector2 moveInput;
+    private Vector3 moveDirection;
+    public Transform orientation;
     private float currentSpeed;
 
     private void Awake()
@@ -53,8 +55,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 move = new Vector3(moveInput.x, 0f, moveInput.y);
-        rb.linearVelocity = new Vector3(move.x * currentSpeed, rb.linearVelocity.y, move.z * currentSpeed);
+        moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
+        rb.AddForce(moveDirection * speed);
     }
 
     private void OnTriggerEnter(Collider other)

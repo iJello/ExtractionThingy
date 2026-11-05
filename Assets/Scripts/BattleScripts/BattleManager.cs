@@ -28,6 +28,9 @@ public class BattleManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         currentCreature = player;
         targetCreature = opponent;
 

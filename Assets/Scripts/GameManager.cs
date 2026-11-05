@@ -71,6 +71,6 @@ public class GameManager : MonoBehaviour
     private void GoToMainBase()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainBase");
+        SceneManager.LoadScene("Forest");
     }
 }
