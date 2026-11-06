@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private Vector2 moveInput;
     private Vector3 moveDirection;
-    public Transform orientation;
+    public Transform cam;
     private float currentSpeed;
 
     private void Awake()
@@ -55,8 +55,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveDirection = orientation.forward * moveInput.y + orientation.right * moveInput.x;
-        rb.AddForce(moveDirection * speed);
+        Vector3 forward = cam.forward;
+        Vector3 right = cam.right;
+        
+        forward.y = 0f;
+        right.y = 0f;
+        
+        forward.Normalize();
+        right.Normalize();
+        
+        moveDirection = forward * moveInput.y + right * moveInput.x;
+        
+        Vector3 targetVelocity = moveDirection * currentSpeed;
+        rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
     }
 
     private void OnTriggerEnter(Collider other)
