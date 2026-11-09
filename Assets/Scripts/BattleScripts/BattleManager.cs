@@ -8,6 +8,9 @@ public class BattleManager : MonoBehaviour
     public Creature player;
     public Creature opponent;
 
+    //Active Move buttons
+    public MoveButton[] moveButtons;
+
     public Creature currentCreature;
     public Creature targetCreature;
 
@@ -24,6 +27,8 @@ public class BattleManager : MonoBehaviour
     //UI stuff
     public Slider playerHealthBar;
     public Slider enemyHealthBar;
+    public GameObject PlayerTurnIndicator;
+    public GameObject EnemyTurnIndicator;
     public TMP_Text apTurnText;
 
     private void Start()
@@ -44,10 +49,14 @@ public class BattleManager : MonoBehaviour
         {
             currentCreature = player;
             targetCreature = opponent;
-
+            PlayerTurnIndicator.SetActive(true);
+            EnemyTurnIndicator.SetActive(false);
             currentAP = playerBaseAP + playerStoredAP;
             playerStoredAP = 0;
-
+            
+            //DefendIconStuff
+            player.defensePoints = 0;
+            player.RemoveStatus(StatusType.Defend); 
 
             playerBaseAP = Mathf.Min(6, playerBaseAP + 1);
         }
@@ -55,10 +64,13 @@ public class BattleManager : MonoBehaviour
         {
             currentCreature = opponent;
             targetCreature = player;
-
+            PlayerTurnIndicator.SetActive(false);
+            EnemyTurnIndicator.SetActive(true);
             currentAP = opponentBaseAP + opponentStoredAP;
             opponentStoredAP = 0;
-
+            //Defend stuff
+            opponent.defensePoints = 0;
+            opponent.RemoveStatus(StatusType.Defend);
             opponentBaseAP = Mathf.Min(6, opponentBaseAP + 1);
         }
 
@@ -104,9 +116,17 @@ public class BattleManager : MonoBehaviour
         currentAP -= points;
         currentCreature.defensePoints += points;
 
+        // Add defend icon
+        currentCreature.AddStatus(
+            StatusType.Defend,
+            currentCreature.defendIcon,
+            1
+        );
+
         Debug.Log(currentCreature.name +
                   " invested " + points +
                   " AP into defense.");
+
         HandleUI();
     }
     // HEAL
@@ -158,7 +178,8 @@ public class BattleManager : MonoBehaviour
             int pointsToStore = Mathf.Min(currentAP, 12 - opponentStoredAP);
             opponentStoredAP += pointsToStore;
         }
-
+        currentCreature.ApplyStatusEffects();
+        currentCreature.TickStatuses();
         Debug.Log(currentCreature.name +
                   " stored remaining AP. Player stored: " +
                   playerStoredAP + ", Opponent stored: " +
@@ -206,6 +227,22 @@ public class BattleManager : MonoBehaviour
             }
 
             return;
+        }
+    }
+    public void UpdateMoveButtons()
+    {
+
+        foreach (MoveButton button in moveButtons)
+        {
+            button.ClearButton();
+        }
+
+        for (int i = 0; i < currentCreature.moves.Count; i++)
+        {
+            if (i >= moveButtons.Length)
+                break;
+
+            moveButtons[i].AssignMove(currentCreature.moves[i]);
         }
     }
 }
