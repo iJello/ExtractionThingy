@@ -15,9 +15,9 @@ public class CreatureMovement : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector3(movePoint1.position.x, transform.position.y, movePoint1.position.z);
-        
-        target = new Vector3(movePoint2.position.x, transform.position.y, movePoint2.position.z);
+        transform.position = movePoint1.position;
+         
+        target = movePoint2.position;
     }
 
     void Update()
