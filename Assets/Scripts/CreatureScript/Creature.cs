@@ -136,6 +136,7 @@ public class Creature : MonoBehaviour
                     Heal(5);
                     Debug.Log(name + " regen 5 HP");
                     break;
+                
             }
         }
     }

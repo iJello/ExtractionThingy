@@ -52,8 +52,12 @@ public class BattleManager : MonoBehaviour
             PlayerTurnIndicator.SetActive(true);
             EnemyTurnIndicator.SetActive(false);
             currentAP = playerBaseAP + playerStoredAP;
+
+
             playerStoredAP = 0;
             
+
+            UpdateMoveButtons();
             //DefendIconStuff
             player.defensePoints = 0;
             player.RemoveStatus(StatusType.Defend); 
@@ -68,6 +72,8 @@ public class BattleManager : MonoBehaviour
             EnemyTurnIndicator.SetActive(true);
             currentAP = opponentBaseAP + opponentStoredAP;
             opponentStoredAP = 0;
+
+            UpdateMoveButtons();
             //Defend stuff
             opponent.defensePoints = 0;
             opponent.RemoveStatus(StatusType.Defend);
@@ -243,6 +249,13 @@ public class BattleManager : MonoBehaviour
                 break;
 
             moveButtons[i].AssignMove(currentCreature.moves[i]);
+        }
+    }
+    public void CheckStatus()
+    {
+        if(currentCreature.HasStatus(StatusType.Paralyze))
+        {
+            currentAP -= 2;
         }
     }
 }
