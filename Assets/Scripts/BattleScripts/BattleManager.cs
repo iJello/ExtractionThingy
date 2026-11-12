@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
 
     //Active Move buttons
     public MoveButton[] moveButtons;
+    public GameObject actionButtons;
 
     public Creature currentCreature;
     public Creature targetCreature;
@@ -254,10 +255,12 @@ public class BattleManager : MonoBehaviour
 
             if (!player.IsAlive())
             {
+                actionButtons.SetActive(false);
                 GameManager.instance.Lose();
             }
             else if (!opponent.IsAlive())
             {
+                actionButtons.SetActive(false);
                 GameManager.instance.Win();
             }
 
