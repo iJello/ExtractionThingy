@@ -6,6 +6,7 @@ public class MoveButton : MonoBehaviour
 {
     public Button button;
     public TMP_Text buttonText;
+    public TMP_Text APCost;
 
     private MovesBase assignedMove;
     private BattleManager battleManager;
@@ -20,8 +21,8 @@ public class MoveButton : MonoBehaviour
         assignedMove = move;
 
         buttonText.text = move.moveName;
-
-        button.onClick.RemoveAllListeners();
+        APCost.text = move.actionPointCost.ToString() + " AP";
+        button.onClick.RemoveAllListeners();    
 
         button.onClick.AddListener(() =>
         {

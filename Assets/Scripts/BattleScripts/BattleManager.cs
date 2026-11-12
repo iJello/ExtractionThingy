@@ -34,7 +34,7 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
-
+            
     }
     private void Start()
     {
@@ -144,7 +144,7 @@ public class BattleManager : MonoBehaviour
         currentCreature.AddStatus(
             StatusType.Defend,
             currentCreature.defendIcon,
-            1
+            2
         );
 
         Debug.Log(currentCreature.name +
