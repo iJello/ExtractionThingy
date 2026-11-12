@@ -5,5 +5,8 @@ public enum StatusType
     Poison,
     Burn,
     Stun,
-    Regen
+    Regen,
+    FissureDebuff,
+    StoneTossDebuff,
+    Swiftstream
 }

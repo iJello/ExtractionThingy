@@ -27,7 +27,7 @@ public class MoveButton : MonoBehaviour
         {
             battleManager.Attack(assignedMove);
         });
-
+        Debug.Log("Assigned " + move.moveName);
         button.interactable = true;
     }
 
