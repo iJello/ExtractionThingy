@@ -1,53 +1,60 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class CreatureMovement : MonoBehaviour
 {
-    [SerializeField] private Transform movePoint1;
-    [SerializeField] private Transform movePoint2;
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float range = 10f;
-    
-    private Vector3 target;
-    private bool headingToPoint2 = true;
-    private bool inRange;
-    private bool isChasing = false;
+    [SerializeField] private float wanderRadius = 10f;
+    [SerializeField] private float minWaitTime = 1f;
+    [SerializeField] private float maxWaitTime = 4f;
+
+    private NavMeshAgent navMesh;
+    private Vector3 center;
+    private float waitTimer;
 
     void Start()
     {
-        transform.position = movePoint1.position;
-         
-        target = movePoint2.position;
+        navMesh = GetComponent<NavMeshAgent>();
+        center = transform.position; 
+        NewDestination();
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        
-        Vector3 direction = target - transform.position;
-        if (direction != Vector3.zero)
+        if (waitTimer > 0f)
         {
-            float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            waitTimer -= Time.deltaTime;
+            return;
         }
         
-        if (Vector3.Distance(transform.position, target) < 0.1f)
+        if (!navMesh.pathPending && navMesh.remainingDistance <= navMesh.stoppingDistance + 0.1f)
         {
-            headingToPoint2 = !headingToPoint2;
-            
-            Transform nextPoint = headingToPoint2 ? movePoint2 : movePoint1;
-            
-            target = new Vector3(nextPoint.position.x, transform.position.y, nextPoint.position.z);
+            NewDestination();
+            waitTimer = Random.Range(minWaitTime, maxWaitTime);
+        }
+    }
+
+    void NewDestination()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Vector3 randomPoint = center + Random.insideUnitSphere * wanderRadius;
+            randomPoint.y = center.y;
+
+            if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, wanderRadius, NavMesh.AllAreas))
+            {
+                navMesh.SetDestination(hit.position);
+                return;
+            }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Test");
             SceneManager.LoadScene("BattleScene");
         }
     }
-    
 }
