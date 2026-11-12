@@ -8,13 +8,17 @@ public class BattleManager : MonoBehaviour
     public Creature player;
     public Creature opponent;
 
+    //Active Move buttons
+    public MoveButton[] moveButtons;
+
     public Creature currentCreature;
     public Creature targetCreature;
 
     public int currentAP;
+    private int currentBaseAP;
 
-    private int playerBaseAP = 1;
-    private int opponentBaseAP = 1;
+    private int playerBaseAP = 0;
+    private int opponentBaseAP = 0;
 
     private int playerStoredAP = 0;
     private int opponentStoredAP = 0;
@@ -24,8 +28,14 @@ public class BattleManager : MonoBehaviour
     //UI stuff
     public Slider playerHealthBar;
     public Slider enemyHealthBar;
+    public GameObject PlayerTurnIndicator;
+    public GameObject EnemyTurnIndicator;
     public TMP_Text apTurnText;
 
+    private void Awake()
+    {
+            
+    }
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -45,21 +55,47 @@ public class BattleManager : MonoBehaviour
             currentCreature = player;
             targetCreature = opponent;
 
-            currentAP = playerBaseAP + playerStoredAP;
-            playerStoredAP = 0;
-
-
+            UpdateMoveButtons();
             playerBaseAP = Mathf.Min(6, playerBaseAP + 1);
+            currentBaseAP = playerBaseAP;
+            currentAP = currentBaseAP + playerStoredAP;
+            PlayerTurnIndicator.SetActive(true);
+            EnemyTurnIndicator.SetActive(false);
+            currentAP = playerBaseAP + playerStoredAP;
+
+
+            playerStoredAP = 0;
+            
+
+            
+            //DefendIconStuff
+            player.defensePoints = 0;
+            player.RemoveStatus(StatusType.Defend); 
+            //Check Status
+            CheckEarlyStatus();
+
+            
         }
         else
         {
             currentCreature = opponent;
             targetCreature = player;
-
+            UpdateMoveButtons();
+            opponentBaseAP = Mathf.Min(6, opponentBaseAP + 1);
+            currentBaseAP = opponentBaseAP;
+            currentAP = currentBaseAP + opponentStoredAP;
+            PlayerTurnIndicator.SetActive(false);
+            EnemyTurnIndicator.SetActive(true);
             currentAP = opponentBaseAP + opponentStoredAP;
             opponentStoredAP = 0;
 
-            opponentBaseAP = Mathf.Min(6, opponentBaseAP + 1);
+          
+            //Defend stuff
+            opponent.defensePoints = 0;
+            opponent.RemoveStatus(StatusType.Defend);
+            //CheckStatuses
+            CheckEarlyStatus();
+            
         }
 
         Debug.Log(currentCreature.name +
@@ -104,9 +140,17 @@ public class BattleManager : MonoBehaviour
         currentAP -= points;
         currentCreature.defensePoints += points;
 
+        // Add defend icon
+        currentCreature.AddStatus(
+            StatusType.Defend,
+            currentCreature.defendIcon,
+            2
+        );
+
         Debug.Log(currentCreature.name +
                   " invested " + points +
                   " AP into defense.");
+
         HandleUI();
     }
     // HEAL
@@ -158,7 +202,8 @@ public class BattleManager : MonoBehaviour
             int pointsToStore = Mathf.Min(currentAP, 12 - opponentStoredAP);
             opponentStoredAP += pointsToStore;
         }
-
+        currentCreature.ApplyStatusEffects();
+        currentCreature.TickStatuses();
         Debug.Log(currentCreature.name +
                   " stored remaining AP. Player stored: " +
                   playerStoredAP + ", Opponent stored: " +
@@ -185,10 +230,21 @@ public class BattleManager : MonoBehaviour
             enemyHealthBar.maxValue = opponent.maxHealth;
             enemyHealthBar.value = opponent.health;
         }
-        if (apTurnText != null)
+        if(playerTurn)
         {
-            apTurnText.text = currentAP.ToString() + " AP";
+            if (apTurnText != null)
+            {
+                apTurnText.text = currentAP.ToString() + " AP / " + currentBaseAP.ToString() + " AP";
+            }
         }
+        else
+        {
+            if (apTurnText != null)
+            {
+                apTurnText.text = currentAP.ToString() + " AP/ " + opponentBaseAP.ToString() + " AP" ;
+            }
+        }
+        
     }
     public void CheckDead()
     {
@@ -207,5 +263,37 @@ public class BattleManager : MonoBehaviour
 
             return;
         }
+    }
+    public void UpdateMoveButtons()
+    {
+
+        foreach (MoveButton button in moveButtons)
+        {
+            button.ClearButton();
+        }
+
+        for (int i = 0; i < currentCreature.moves.Count; i++)
+        {
+            if (i >= moveButtons.Length)
+                break;
+
+            moveButtons[i].AssignMove(currentCreature.moves[i]);
+        }
+    }
+    public void CheckEarlyStatus()
+    {
+        if(currentCreature.HasStatus(StatusType.Paralyze))
+        {
+            currentAP -= 2;
+        }
+        if(currentCreature.HasStatus(StatusType.FissureDebuff))
+        {
+            currentAP -= playerBaseAP/2;
+        }
+        if(currentCreature.HasStatus(StatusType.StoneTossDebuff))
+        {
+            currentAP -= 1;
+        }
+
     }
 }
