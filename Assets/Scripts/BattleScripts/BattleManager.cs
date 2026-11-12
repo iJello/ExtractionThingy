@@ -195,12 +195,12 @@ public class BattleManager : MonoBehaviour
         //Store
         if (playerTurn)
         {
-            int pointsToStore = Mathf.Min(currentAP, 12 - playerStoredAP);
+            int pointsToStore = Mathf.Min(currentAP, 6 - playerStoredAP);
             playerStoredAP += pointsToStore;
         }
         else
         {
-            int pointsToStore = Mathf.Min(currentAP, 12 - opponentStoredAP);
+            int pointsToStore = Mathf.Min(currentAP, 6 - opponentStoredAP);
             opponentStoredAP += pointsToStore;
         }
         currentCreature.ApplyStatusEffects();
