@@ -8,5 +8,6 @@ public enum StatusType
     Regen,
     FissureDebuff,
     StoneTossDebuff,
-    Swiftstream
+    Swiftstream,
+    Freeze
 }
