@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Creature : MonoBehaviour
@@ -9,6 +10,8 @@ public class Creature : MonoBehaviour
     public int block;
     public int defensePoints;
     public Sprite defendIcon;
+    public Slider healthBar;
+    public GameObject turnIndicator;
     //Shader stuff
     public CreatureShaderController shaderController;
 
@@ -18,6 +21,7 @@ public class Creature : MonoBehaviour
     
     [Header("Status Effects")]
     public List<StatusData> activeStatuses = new List<StatusData>();
+
 
     public StatusIconUI statusIconUI;
 

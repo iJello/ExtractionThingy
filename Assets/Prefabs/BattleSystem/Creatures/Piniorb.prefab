@@ -284,6 +284,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 576315e519d1bde46898432271f516b4, type: 3}
+--- !u!114 &2840808028603274972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2095388144807018956, guid: 576315e519d1bde46898432271f516b4, type: 3}
+  m_PrefabInstance: {fileID: 4213332628162500368}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &6021746973767327454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7631711601784981966, guid: 576315e519d1bde46898432271f516b4, type: 3}
+  m_PrefabInstance: {fileID: 4213332628162500368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6797595541330152167 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7218472586746994167, guid: 576315e519d1bde46898432271f516b4, type: 3}
@@ -428,6 +444,8 @@ MonoBehaviour:
   block: 0
   defensePoints: 0
   defendIcon: {fileID: 21300000, guid: 47beacdc9cca17e4c894eab3b6d0eee7, type: 3}
+  healthBar: {fileID: 2840808028603274972}
+  turnIndicator: {fileID: 6021746973767327454}
   shaderController: {fileID: 6714675093821016289}
   moves:
   - {fileID: 7234478727763164054}

@@ -2,11 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class BattleManager : MonoBehaviour
 {
     public Creature player;
     public Creature opponent;
+
+    [Header("Player Party")]
+    public List<Creature> playerParty = new List<Creature>();
 
     //Active Move buttons
     public MoveButton[] moveButtons;
@@ -42,8 +46,15 @@ public class BattleManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
+        playerHealthBar = player.healthBar;
+        PlayerTurnIndicator = player.turnIndicator;
+
+        enemyHealthBar = opponent.healthBar;
+        EnemyTurnIndicator = player.turnIndicator;
+
         currentCreature = player;
         targetCreature = opponent;
+
 
         StartTurn();
         HandleUI();
@@ -298,5 +309,61 @@ public class BattleManager : MonoBehaviour
             currentAP -= 1;
         }
 
+    }
+    public void SwapParty(Creature newCreature)
+    {
+        
+        if (!playerTurn)
+            return;
+
+
+        if (newCreature == null || !playerParty.Contains(newCreature))
+            return;
+
+        if (newCreature == player)
+            return;
+
+
+        if (!newCreature.IsAlive())
+        {
+            Debug.Log("This creature has fainted!");
+            return;
+        }
+
+        if (currentAP < 1)
+        {
+            Debug.Log("Not enough AP to swap!");
+            return;
+        }
+
+        currentAP--;
+
+
+        player.gameObject.SetActive(false);
+
+
+        player = newCreature;
+
+        player.gameObject.SetActive(true);
+
+
+        currentCreature = player;
+        targetCreature = opponent;
+
+        playerHealthBar = player.healthBar;
+        PlayerTurnIndicator = player.turnIndicator;
+
+
+        UpdateMoveButtons();
+        HandleUI();
+
+        Debug.Log("Switched to " + player.name);
+    }
+    public void SwapToCreature(int index)
+    {
+        if (index < 0 || index >= playerParty.Count)
+            return;
+
+        SwapParty(playerParty[index]);
     }
 }
