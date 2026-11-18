@@ -88,6 +88,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6378277105209548495}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7691194981332427124}
@@ -95,6 +98,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 708982420283844113}
   m_SourcePrefab: {fileID: 100100000, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+--- !u!23 &4295856919721236234 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7202271454713460447, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+  m_PrefabInstance: {fileID: 6372145564477481429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6102097604413217924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+  m_PrefabInstance: {fileID: 6372145564477481429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!205 &6378277105209548495
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102097604413217924}
+  serializedVersion: 3
+  m_LocalReferencePoint: {x: 0, y: 9.313757, z: 0.0000009536743}
+  m_Size: 18.627514
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.27904952
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8372014753455370219}
+    - renderer: {fileID: 4295856919721236234}
+  m_Enabled: 1
+  m_GlobalIlluminationLOD: 0
 --- !u!1 &7698695997048352725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
@@ -138,3 +172,8 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.009000001}
   m_TimeToStationary: 0.5
+--- !u!23 &8372014753455370219 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6034480803058315714, guid: 2205a6ff5331a2045b64e1fe6106f1fa, type: 3}
+  m_PrefabInstance: {fileID: 6372145564477481429}
+  m_PrefabAsset: {fileID: 0}

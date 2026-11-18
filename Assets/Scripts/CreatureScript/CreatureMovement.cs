@@ -7,30 +7,49 @@ public class CreatureMovement : MonoBehaviour
     [SerializeField] private float wanderRadius = 10f;
     [SerializeField] private float minWaitTime = 1f;
     [SerializeField] private float maxWaitTime = 4f;
+    
+    [SerializeField] private float detectionRadius = 10f;
 
     private NavMeshAgent navMesh;
     private Vector3 center;
     private float waitTimer;
+    
+    private Transform player;
+    private bool isChasing;
 
     void Start()
     {
         navMesh = GetComponent<NavMeshAgent>();
         center = transform.position; 
         NewDestination();
+        
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            player = p.transform;
+        }
+
     }
 
     void Update()
     {
-        if (waitTimer > 0f)
+        if (player != null)
         {
-            waitTimer -= Time.deltaTime;
-            return;
+            float distToPlayer = Vector3.Distance(transform.position, player.position);
+            isChasing = distToPlayer <= detectionRadius;
         }
-        
-        if (!navMesh.pathPending && navMesh.remainingDistance <= navMesh.stoppingDistance + 0.1f)
+        else
         {
-            NewDestination();
-            waitTimer = Random.Range(minWaitTime, maxWaitTime);
+            isChasing = false;
+        }
+
+        if (isChasing)
+        {
+            ChasePlayer();
+        }
+        else
+        {
+            Wander();
         }
     }
 
@@ -49,6 +68,26 @@ public class CreatureMovement : MonoBehaviour
         }
     }
 
+    void ChasePlayer()
+    {
+        navMesh.SetDestination(player.position);
+    }
+
+    void Wander()
+    {
+        if (waitTimer > 0f)
+        {
+            waitTimer -= Time.deltaTime;
+            return;
+        }
+
+        if (!navMesh.pathPending && navMesh.remainingDistance <= navMesh.stoppingDistance + 0.1f)
+        {
+            NewDestination();
+            waitTimer = Random.Range(minWaitTime, maxWaitTime);
+        }
+    }
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

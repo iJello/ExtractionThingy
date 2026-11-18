@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - LightAffected
+  - Piniorb
+  - Glacone
+  - ElectricMosquito
+  - Seade
+  - Pebblit
   layers:
   - Default
   - TransparentFX
