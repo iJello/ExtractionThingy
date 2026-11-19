@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestLayout (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 74f30b297aec90c469609b1a873ce51f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1152392682220182882, guid: 74f30b297aec90c469609b1a873ce51f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3431,8 +3435,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.744873, y: 5.1890574, z: 0.834877}
-  m_Center: {x: 0.044654846, y: -0.1966939, z: 0.005344391}
+  m_Size: {x: 4.4348755, y: 13.476166, z: 0.834877}
+  m_Center: {x: 0.068626404, y: -0.5021095, z: 0.005344391}
 --- !u!114 &1415500927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,8 +3489,8 @@ Transform:
   m_GameObject: {fileID: 1415500925}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.4, y: 11.72, z: -128.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -115.4, y: 14.9, z: -128.2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 165004639}
@@ -3653,7 +3657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1679039509
 MeshCollider:
   m_ObjectHideFlags: 0
