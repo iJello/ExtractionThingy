@@ -95159,7 +95159,7 @@ MonoBehaviour:
   - {fileID: 1888311574}
   - {fileID: 1180959531}
   - {fileID: 1685625143}
-  actionButtons: {fileID: 0}
+  actionButtons: {fileID: 1752185893}
   currentCreature: {fileID: 0}
   targetCreature: {fileID: 0}
   currentAP: 0

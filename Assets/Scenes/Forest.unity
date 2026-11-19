@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74f30b297aec90c469609b1a873ce51f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -217
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74f30b297aec90c469609b1a873ce51f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74f30b297aec90c469609b1a873ce51f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 138017907}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -4615,7 +4615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 289354347163302119, guid: b5f62651237231c4487797aef28019af, type: 3}
       propertyPath: detectionRadius
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1359399620324861376, guid: b5f62651237231c4487797aef28019af, type: 3}
       propertyPath: m_LocalPosition.x
