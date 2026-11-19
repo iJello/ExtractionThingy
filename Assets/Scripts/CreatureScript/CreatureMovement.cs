@@ -1,47 +1,98 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class CreatureMovement : MonoBehaviour
 {
-    [SerializeField] private Transform movePoint1;
-    [SerializeField] private Transform movePoint2;
-    [SerializeField] private float speed = 2f;
+    [SerializeField] private float wanderRadius = 10f;
+    [SerializeField] private float minWaitTime = 1f;
+    [SerializeField] private float maxWaitTime = 4f;
+    
+    [SerializeField] private float detectionRadius = 10f;
 
-    private Vector3 target;
-    private bool headingToPoint2 = true;
+    private NavMeshAgent navMesh;
+    private Vector3 center;
+    private float waitTimer;
+    
+    private Transform player;
+    private bool isChasing;
 
     void Start()
     {
-        transform.position = new Vector3(movePoint1.position.x, transform.position.y, movePoint1.position.z);
+        navMesh = GetComponent<NavMeshAgent>();
+        center = transform.position; 
+        NewDestination();
         
-        target = new Vector3(movePoint2.position.x, transform.position.y, movePoint2.position.z);
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            player = p.transform;
+        }
+
     }
 
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        
-        Vector3 direction = target - transform.position;
-        if (direction != Vector3.zero)
+        if (player != null)
         {
-            float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            float distToPlayer = Vector3.Distance(transform.position, player.position);
+            isChasing = distToPlayer <= detectionRadius;
         }
-        
-        if (Vector3.Distance(transform.position, target) < 0.1f)
+        else
         {
-            headingToPoint2 = !headingToPoint2;
-            
-            Transform nextPoint = headingToPoint2 ? movePoint2 : movePoint1;
-            
-            target = new Vector3(nextPoint.position.x, transform.position.y, nextPoint.position.z);
+            isChasing = false;
+        }
+
+        if (isChasing)
+        {
+            ChasePlayer();
+        }
+        else
+        {
+            Wander();
         }
     }
 
+    void NewDestination()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Vector3 randomPoint = center + Random.insideUnitSphere * wanderRadius;
+            randomPoint.y = center.y;
+
+            if (NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, wanderRadius, NavMesh.AllAreas))
+            {
+                navMesh.SetDestination(hit.position);
+                return;
+            }
+        }
+    }
+
+    void ChasePlayer()
+    {
+        navMesh.SetDestination(player.position);
+    }
+
+    void Wander()
+    {
+        if (waitTimer > 0f)
+        {
+            waitTimer -= Time.deltaTime;
+            return;
+        }
+
+        if (!navMesh.pathPending && navMesh.remainingDistance <= navMesh.stoppingDistance + 0.1f)
+        {
+            NewDestination();
+            waitTimer = Random.Range(minWaitTime, maxWaitTime);
+        }
+    }
+    
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            Debug.Log("Test");
             SceneManager.LoadScene("BattleScene");
         }
     }
