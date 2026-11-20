@@ -50,7 +50,7 @@ public class BattleManager : MonoBehaviour
         PlayerTurnIndicator = player.turnIndicator;
 
         enemyHealthBar = opponent.healthBar;
-        EnemyTurnIndicator = player.turnIndicator;
+        EnemyTurnIndicator = opponent.turnIndicator;
 
         currentCreature = player;
         targetCreature = opponent;
@@ -117,7 +117,7 @@ public class BattleManager : MonoBehaviour
     //  ATTACK stuff
     public void Attack(MovesBase move)
     {
-        
+        Debug.Log(currentCreature.name);
         if (move == null || currentCreature == null ||
             targetCreature == null)
             return;
@@ -302,7 +302,7 @@ public class BattleManager : MonoBehaviour
         }
         if(currentCreature.HasStatus(StatusType.FissureDebuff))
         {
-            currentAP -= playerBaseAP/2;
+            currentAP -= currentBaseAP / 2;
         }
         if(currentCreature.HasStatus(StatusType.StoneTossDebuff))
         {
@@ -312,17 +312,14 @@ public class BattleManager : MonoBehaviour
     }
     public void SwapParty(Creature newCreature)
     {
-        
         if (!playerTurn)
             return;
-
 
         if (newCreature == null || !playerParty.Contains(newCreature))
             return;
 
         if (newCreature == player)
             return;
-
 
         if (!newCreature.IsAlive())
         {
@@ -338,14 +335,12 @@ public class BattleManager : MonoBehaviour
 
         currentAP--;
 
+        Creature oldCreature = player;
 
-        player.gameObject.SetActive(false);
-
+        oldCreature.gameObject.SetActive(false);
 
         player = newCreature;
-
         player.gameObject.SetActive(true);
-
 
         currentCreature = player;
         targetCreature = opponent;
@@ -353,11 +348,11 @@ public class BattleManager : MonoBehaviour
         playerHealthBar = player.healthBar;
         PlayerTurnIndicator = player.turnIndicator;
 
-
         UpdateMoveButtons();
         HandleUI();
 
-        Debug.Log("Switched to " + player.name);
+        Debug.Log("Switched from " + oldCreature.name +
+                  " to " + player.name);
     }
     public void SwapToCreature(int index)
     {
