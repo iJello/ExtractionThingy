@@ -110,6 +110,10 @@ public class Creature : MonoBehaviour
             statusIconUI.UpdateIcons(activeStatuses);
         }
     }
+    public void AttackAnim()
+    {
+        anim.SetTrigger("Attack");
+    }
 
     public void TickStatuses()
     {

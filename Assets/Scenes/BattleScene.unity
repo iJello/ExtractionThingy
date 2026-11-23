@@ -17047,6 +17047,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49045d378e7a1f48a040ef571b4ed28, type: 3}
+--- !u!1 &75345101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3529912837080205641, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
+  m_PrefabInstance: {fileID: 7686586069644984247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &136233789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40752,7 +40757,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8598282083559814338, guid: a66da24b52ca2dc4aafe5eb76e2a1482, type: 3}
   m_PrefabInstance: {fileID: 1199886205768135011}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 920445175}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2cacdde78fbd804aa2df894beebeee0, type: 3}
@@ -52252,6 +52257,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49045d378e7a1f48a040ef571b4ed28, type: 3}
+--- !u!1 &920445175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8025729322501518773, guid: a66da24b52ca2dc4aafe5eb76e2a1482, type: 3}
+  m_PrefabInstance: {fileID: 1199886205768135011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &920445176
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920445175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 1697355694}
+  m_Controller: {fileID: 9100000, guid: d9ce4969c5c5ad14b810238c7b2120bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &928131782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f49045d378e7a1f48a040ef571b4ed28, type: 3}
@@ -92744,12 +92776,34 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2793090898627340829, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
   m_PrefabInstance: {fileID: 7686586069644984247}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 75345101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2cacdde78fbd804aa2df894beebeee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Creature
+--- !u!95 &1341766225
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75345101}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9ce4969c5c5ad14b810238c7b2120bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1368605746
 GameObject:
   m_ObjectHideFlags: 0
@@ -93922,6 +93976,282 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf86d4e7e8889b4081b289132505ef3, type: 3}
+--- !u!90 &1697355694
+Avatar:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Automatic Avatar
+  m_AvatarSize: 2392
+  m_Avatar:
+    serializedVersion: 3
+    m_AvatarSkeleton:
+      data:
+        m_Node:
+        - m_ParentId: -1
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 7
+          m_AxesId: -1
+        - m_ParentId: 7
+          m_AxesId: -1
+        - m_ParentId: 9
+          m_AxesId: -1
+        - m_ParentId: 9
+          m_AxesId: -1
+        - m_ParentId: 11
+          m_AxesId: -1
+        - m_ParentId: 7
+          m_AxesId: -1
+        - m_ParentId: 0
+          m_AxesId: -1
+        - m_ParentId: 14
+          m_AxesId: -1
+        - m_ParentId: 14
+          m_AxesId: -1
+        - m_ParentId: 14
+          m_AxesId: -1
+        m_ID: 000000008ca49a7bfd1a0b45f6ed9e10a89b2807f8746c8b6ce95da398aefc7611c1d4acf84385a3ee8ad1202acbef12b208f101ccadf2126e9d63d8e8126346e7d98793e8058b8b
+        m_AxesArray: []
+    m_AvatarSkeletonPose:
+      data:
+        m_X:
+        - t: {x: -1, y: 0.1, z: -3.5}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 0.5, y: 0.5, z: 0.5}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: 0.6765898, y: 1.0490782, z: 0.43143684}
+          q: {x: 0.7790204, y: -0.23173727, z: -0.44349995, w: -0.3777999}
+          s: {x: 14.0249195, y: 5.3196344, z: 40.954304}
+        - t: {x: -0.5455527, y: 0.3435633, z: 0.65840346}
+          q: {x: -0.6617626, y: 0.064654, z: 0.1516662, w: 0.7313601}
+          s: {x: 20.527508, y: 20.527504, z: 20.527508}
+        - t: {x: 0.043822855, y: 1.1122239, z: 0.7575802}
+          q: {x: -0.31704512, y: 0, z: -0, w: 0.94841045}
+          s: {x: 24.93382, y: 24.93382, z: 24.93382}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 0.02, y: 0.02, z: 0.02}
+        - t: {x: 9, y: 100, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1.7, y: 0.2, z: 1}
+        - t: {x: 9.5, y: 100, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -59.9, y: 117.2, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 0.2, y: 0.2, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+    m_DefaultPose:
+      data:
+        m_X:
+        - t: {x: -1, y: 0.1, z: -3.5}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 0.5, y: 0.5, z: 0.5}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: 0.6765898, y: 1.0490782, z: 0.43143684}
+          q: {x: 0.7790204, y: -0.23173727, z: -0.44349995, w: -0.3777999}
+          s: {x: 14.0249195, y: 5.3196344, z: 40.954304}
+        - t: {x: -0.5455527, y: 0.3435633, z: 0.65840346}
+          q: {x: -0.6617626, y: 0.064654, z: 0.1516662, w: 0.7313601}
+          s: {x: 20.527508, y: 20.527504, z: 20.527508}
+        - t: {x: 0.043822855, y: 1.1122239, z: 0.7575802}
+          q: {x: -0.31704512, y: 0, z: -0, w: 0.94841045}
+          s: {x: 24.93382, y: 24.93382, z: 24.93382}
+        - t: {x: -0, y: 0.46793804, z: 0}
+          q: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+          s: {x: 100, y: 100, z: 100}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 0.02, y: 0.02, z: 0.02}
+        - t: {x: 9, y: 100, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1.7, y: 0.2, z: 1}
+        - t: {x: 9.5, y: 100, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -59.9, y: 117.2, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 0.2, y: 0.2, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+        - t: {x: 2.45218, y: -0.2, z: -1.8416595}
+          q: {x: -0, y: -0, z: -0, w: 1}
+          s: {x: 2, y: 2, z: 2}
+    m_SkeletonNameIDArray: 000000008ca49a7bfd1a0b45f6ed9e10a89b2807f8746c8b6ce95da398aefc7670e105ff076a0de480b735f34d5e26208a217155222d14286e9d63d8304ba9088140dfc15b55f0bb
+    m_Human:
+      data:
+        serializedVersion: 2
+        m_RootX:
+          t: {x: 0, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 0, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        m_Skeleton:
+          data:
+            m_Node: []
+            m_ID: 
+            m_AxesArray: []
+        m_SkeletonPose:
+          data:
+            m_X: []
+        m_LeftHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_RightHand:
+          data:
+            m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneMass:
+        - 0.14545456
+        - 0.12121213
+        - 0.12121213
+        - 0.048484854
+        - 0.048484854
+        - 0.009696971
+        - 0.009696971
+        - 0.030303033
+        - 0.14545456
+        - 0.14545456
+        - 0.012121214
+        - 0.048484854
+        - 0.006060607
+        - 0.006060607
+        - 0.024242427
+        - 0.024242427
+        - 0.01818182
+        - 0.01818182
+        - 0.006060607
+        - 0.006060607
+        - 0.0024242427
+        - 0.0024242427
+        - 0
+        - 0
+        - 0
+        m_Scale: 1
+        m_ArmTwist: 0.5
+        m_ForeArmTwist: 0.5
+        m_UpperLegTwist: 0.5
+        m_LegTwist: 0.5
+        m_ArmStretch: 0.05
+        m_LegStretch: 0.05
+        m_FeetSpacing: 0
+        m_HasLeftHand: 0
+        m_HasRightHand: 0
+        m_HasTDoF: 0
+    m_HumanSkeletonIndexArray: 
+    m_HumanSkeletonReverseIndexArray: 
+    m_RootMotionBoneIndex: -1
+    m_RootMotionBoneX:
+      t: {x: 0, y: 0, z: 0}
+      q: {x: 0, y: 0, z: 0, w: 1}
+      s: {x: 1, y: 1, z: 1}
+    m_RootMotionSkeleton:
+      data:
+        m_Node: []
+        m_ID: 
+        m_AxesArray: []
+    m_RootMotionSkeletonPose:
+      data:
+        m_X: []
+    m_RootMotionSkeletonIndexArray: 
+  m_TOS:
+    2339140856: Horn
+    2073732236: Body
+    2475153895: MoveHolder/Medium
+    317894092: CreatureCanvas/StatusIcons
+    2341144040: MoveHolder/Heavy
+    120101800: Eyes
+    278851062: Ears
+    3630407022: MoveHolder
+    1180898024: MoveHolder/BasicAttackMove
+    1158355709: BodyLower
+    1996271256: CreatureCanvas
+    317705002: CreatureCanvas/PlayerHealth/Fill Area
+    0: 
+    2899624209: CreatureCanvas/PlayerTurn
+    550603502: CreatureCanvas/PlayerHealth/Background
+    32573618: CreatureCanvas/PlayerHealth/Fill Area/Fill
+    2740840812: Stripe
+    2743419896: CreatureCanvas/PlayerHealth
+  m_HumanDescription:
+    serializedVersion: 3
+    m_Human: []
+    m_Skeleton: []
+    m_ArmTwist: 0.5
+    m_ForeArmTwist: 0.5
+    m_UpperLegTwist: 0.5
+    m_LegTwist: 0.5
+    m_ArmStretch: 0.05
+    m_LegStretch: 0.05
+    m_FeetSpacing: 0
+    m_GlobalScale: 1
+    m_RootMotionBoneName: 
+    m_HasTranslationDoF: 0
+    m_HasExtraRoot: 0
+    m_SkeletonHasParents: 1
 --- !u!4 &1698612525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aaf86d4e7e8889b4081b289132505ef3, type: 3}
@@ -94728,11 +95058,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleManager
   player: {fileID: 821630434}
   opponent: {fileID: 1341766223}
+  playerParty: []
   moveButtons:
   - {fileID: 1888311574}
   - {fileID: 1180959531}
   - {fileID: 1685625143}
-  actionButtons: {fileID: 0}
+  actionButtons: {fileID: 1752185893}
   currentCreature: {fileID: 0}
   targetCreature: {fileID: 0}
   currentAP: 0
@@ -95045,7 +95376,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8025729322501518773, guid: a66da24b52ca2dc4aafe5eb76e2a1482, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920445176}
   m_SourcePrefab: {fileID: 100100000, guid: a66da24b52ca2dc4aafe5eb76e2a1482, type: 3}
 --- !u!1001 &7686586069644984247
 PrefabInstance:
@@ -95055,6 +95389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 635024473}
     m_Modifications:
+    - target: {fileID: 130531203046614797, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
+      propertyPath: m_Name
+      value: PebblitHealthHealth
+      objectReference: {fileID: 0}
     - target: {fileID: 542068106708340375, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -95066,10 +95404,18 @@ PrefabInstance:
     - target: {fileID: 2793090898627340829, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 866565441}
+      objectReference: {fileID: 1185820119}
     - target: {fileID: 3529912837080205641, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
       propertyPath: m_Name
       value: Pebblit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075301401723654560, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
+      propertyPath: m_Name
+      value: PebblitTurn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075301401723654560, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302931786665661427, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95114,7 +95460,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3529912837080205641, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1341766225}
   m_SourcePrefab: {fileID: 100100000, guid: 8c2a6b30accfc3a4e878a74f26949b0e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

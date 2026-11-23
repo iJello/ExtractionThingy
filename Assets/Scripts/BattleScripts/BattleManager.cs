@@ -118,6 +118,7 @@ public class BattleManager : MonoBehaviour
     public void Attack(MovesBase move)
     {
         Debug.Log(currentCreature.name);
+        currentCreature.AttackAnim();
         if (move == null || currentCreature == null ||
             targetCreature == null)
             return;
