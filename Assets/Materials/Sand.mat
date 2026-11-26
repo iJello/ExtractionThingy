@@ -132,7 +132,7 @@ Material:
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
-    - _mySlider: 0.6
+    - _mySlider: 2
     m_Colors:
     - _BaseColor: {r: 0.96001846, g: 0.9685534, b: 0.60001576, a: 1}
     - _Color: {r: 0.95745665, g: 0.9937106, b: 0.62185025, a: 1}
