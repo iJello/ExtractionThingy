@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Creature : MonoBehaviour
@@ -9,6 +10,9 @@ public class Creature : MonoBehaviour
     public int block;
     public int defensePoints;
     public Sprite defendIcon;
+    public Slider healthBar;
+    public GameObject turnIndicator;
+    private Animator anim;
     //Shader stuff
     public CreatureShaderController shaderController;
 
@@ -18,6 +22,7 @@ public class Creature : MonoBehaviour
     
     [Header("Status Effects")]
     public List<StatusData> activeStatuses = new List<StatusData>();
+
 
     public StatusIconUI statusIconUI;
 
@@ -30,10 +35,19 @@ public class Creature : MonoBehaviour
         }
     
     }
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void TakeDamage(int dmg)
     {
-  
+        if(anim != null)
+        {
+            Debug.Log("ANIMAITON HIT");
+            anim.SetTrigger("Hit");
+        }
+        
         float reduction = Mathf.Clamp(defensePoints * 0.10f, 0f, 1f);
         int reducedDamage = Mathf.CeilToInt(dmg * (1f - reduction));
 
@@ -95,6 +109,10 @@ public class Creature : MonoBehaviour
         {
             statusIconUI.UpdateIcons(activeStatuses);
         }
+    }
+    public void AttackAnim()
+    {
+        anim.SetTrigger("Attack");
     }
 
     public void TickStatuses()

@@ -2,11 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class BattleManager : MonoBehaviour
 {
     public Creature player;
     public Creature opponent;
+
+    [Header("Player Party")]
+    public List<Creature> playerParty = new List<Creature>();
 
     //Active Move buttons
     public MoveButton[] moveButtons;
@@ -26,6 +30,11 @@ public class BattleManager : MonoBehaviour
 
     private bool playerTurn = true;
 
+    //added var for pointer
+    public bool IsPlayerTurn => playerTurn;
+    public int CurrentAP => currentAP;
+
+    public EnemyAI enemyAI;
     //UI stuff
     public Slider playerHealthBar;
     public Slider enemyHealthBar;
@@ -42,8 +51,15 @@ public class BattleManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
+        playerHealthBar = player.healthBar;
+        PlayerTurnIndicator = player.turnIndicator;
+
+        enemyHealthBar = opponent.healthBar;
+        EnemyTurnIndicator = opponent.turnIndicator;
+
         currentCreature = player;
         targetCreature = opponent;
+
 
         StartTurn();
         HandleUI();
@@ -98,6 +114,10 @@ public class BattleManager : MonoBehaviour
             CheckEarlyStatus();
             
         }
+        if (!playerTurn && enemyAI != null)
+        {
+            enemyAI.TakeTurn();
+        }
 
         Debug.Log(currentCreature.name +
                   "'s turn. AP: " + currentAP);
@@ -106,6 +126,7 @@ public class BattleManager : MonoBehaviour
     //  ATTACK stuff
     public void Attack(MovesBase move)
     {
+        Debug.Log(currentCreature.name);
         
         if (move == null || currentCreature == null ||
             targetCreature == null)
@@ -124,7 +145,7 @@ public class BattleManager : MonoBehaviour
         }
 
         currentAP -= move.actionPointCost;
-
+        currentCreature.AttackAnim();
         move.Action(currentCreature, targetCreature);
 
         Debug.Log("Remaining AP: " + currentAP);
@@ -291,12 +312,64 @@ public class BattleManager : MonoBehaviour
         }
         if(currentCreature.HasStatus(StatusType.FissureDebuff))
         {
-            currentAP -= playerBaseAP/2;
+            currentAP -= currentBaseAP / 2;
         }
         if(currentCreature.HasStatus(StatusType.StoneTossDebuff))
         {
             currentAP -= 1;
         }
+        currentAP = Mathf.Max(0, currentAP);
 
+    }
+    public void SwapParty(Creature newCreature)
+    {
+        if (!playerTurn)
+            return;
+
+        if (newCreature == null || !playerParty.Contains(newCreature))
+            return;
+
+        if (newCreature == player)
+            return;
+
+        if (!newCreature.IsAlive())
+        {
+            Debug.Log("This creature has fainted!");
+            return;
+        }
+
+        if (currentAP < 1)
+        {
+            Debug.Log("Not enough AP to swap!");
+            return;
+        }
+
+        currentAP--;
+
+        Creature oldCreature = player;
+
+        oldCreature.gameObject.SetActive(false);
+
+        player = newCreature;
+        player.gameObject.SetActive(true);
+
+        currentCreature = player;
+        targetCreature = opponent;
+
+        playerHealthBar = player.healthBar;
+        PlayerTurnIndicator = player.turnIndicator;
+
+        UpdateMoveButtons();
+        HandleUI();
+
+        Debug.Log("Switched from " + oldCreature.name +
+                  " to " + player.name);
+    }
+    public void SwapToCreature(int index)
+    {
+        if (index < 0 || index >= playerParty.Count)
+            return;
+
+        SwapParty(playerParty[index]);
     }
 }

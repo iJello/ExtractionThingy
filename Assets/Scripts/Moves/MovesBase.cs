@@ -5,7 +5,11 @@ public abstract class MovesBase : MonoBehaviour
 {
     public string moveName;
     public int actionPointCost = 1;
-
+    //1 - 3 low
+    //4-6 mid
+    // 7+ high
+    
+    public int aiPriority = 5;
     public abstract void Action(Creature user, Creature target);
 
 
