@@ -30,6 +30,11 @@ public class BattleManager : MonoBehaviour
 
     private bool playerTurn = true;
 
+    //added var for pointer
+    public bool IsPlayerTurn => playerTurn;
+    public int CurrentAP => currentAP;
+
+    public EnemyAI enemyAI;
     //UI stuff
     public Slider playerHealthBar;
     public Slider enemyHealthBar;
@@ -108,6 +113,10 @@ public class BattleManager : MonoBehaviour
             //CheckStatuses
             CheckEarlyStatus();
             
+        }
+        if (!playerTurn && enemyAI != null)
+        {
+            enemyAI.TakeTurn();
         }
 
         Debug.Log(currentCreature.name +
@@ -309,6 +318,7 @@ public class BattleManager : MonoBehaviour
         {
             currentAP -= 1;
         }
+        currentAP = Mathf.Max(0, currentAP);
 
     }
     public void SwapParty(Creature newCreature)
