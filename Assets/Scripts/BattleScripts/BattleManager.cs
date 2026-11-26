@@ -75,7 +75,6 @@ public class BattleManager : MonoBehaviour
             //Check Status
             CheckEarlyStatus();
 
-            PlaySound(_AudioManager.Clip.Piniorb, 0.5f);
         }
         else
         {
@@ -298,10 +297,5 @@ public class BattleManager : MonoBehaviour
             currentAP -= 1;
         }
 
-    }
-
-    public void PlaySound(_AudioManager.Clip clip, float volume)
-    {
-        _AudioManager.Instance.PlayAudioAtPosition(clip, transform, volume);
     }
 }
