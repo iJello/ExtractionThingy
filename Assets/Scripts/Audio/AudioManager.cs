@@ -30,7 +30,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayCreatureSound(string soundName)
     {
-        if (audioSource == null || creatureSounds == null) return;
+        if (audioSource == null || creatureSounds == null)
+        {
+            return;
+        }
 
         Sounds sound = Array.Find(creatureSounds, s => s.name == soundName);
         
@@ -46,7 +49,9 @@ public class AudioManager : MonoBehaviour
     private void PlayOneShot(Sounds sound, AudioSource targetSource)
     {
         if (sound.clip == null || targetSource == null)
+        {
             return;
+        }
         
         targetSource.PlayOneShot(sound.clip);
     }
