@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class Creature : MonoBehaviour
 {
+    public string cryName = "";
     public int maxHealth = 100;
     public int health;
     public int block;
@@ -48,10 +49,11 @@ public class Creature : MonoBehaviour
             anim.SetTrigger("Hit");
         }
         
+        AudioManager.instance?.PlayCreatureSound(cryName);
+        
         float reduction = Mathf.Clamp(defensePoints * 0.10f, 0f, 1f);
         int reducedDamage = Mathf.CeilToInt(dmg * (1f - reduction));
 
-   
         
 
  
